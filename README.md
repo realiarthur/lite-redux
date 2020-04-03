@@ -1,6 +1,6 @@
 # Redux Connect for Web Components  [![](https://img.shields.io/npm/v/lite-redux.svg?style=flat)](https://www.npmjs.com/package/lite-redux) ![](https://img.shields.io/bundlephobia/minzip/lite-redux.svg?style=flat)
 
-Redux Connect HoC for Web Components. It's also works for LitElement.
+Redux Connect HOC for Web Components. It's also works for LitElement.
 
 ## Usage
 
