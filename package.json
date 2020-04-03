@@ -1,7 +1,7 @@
 {
   "name": "wc-redux-connect",
-  "version": "1.0.4",
-  "description": "Redux Connect HoC for Web Components",
+  "version": "1.0.5",
+  "description": "Redux Connect for Web Components",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c -o dist/index.js"
