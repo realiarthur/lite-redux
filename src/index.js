@@ -7,7 +7,6 @@ export default store => (mapStateToProps, mapDispatchToProps) => Component =>
       this._getPropsFromStore=this._getPropsFromStore.bind(this)
       this._getInheritChainProps=this._getInheritChainProps.bind(this)
 
-      this._getPropsFromStore(mapStateToProps);
       this._inheritChainProps = (this._inheritChainProps || []).concat(
         mapStateToProps
       );
@@ -29,6 +28,8 @@ export default store => (mapStateToProps, mapDispatchToProps) => Component =>
 
     connectedCallback() {
       super.connectedCallback();
+
+      this._getPropsFromStore(mapStateToProps);
 
       this._unsubscriber = store.subscribe(this._getInheritChainProps);
 
