@@ -1,6 +1,6 @@
 {
   "name": "wc-redux-connect",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Redux Connect HoC for Web Components",
   "main": "dist/index.js",
   "scripts": {
