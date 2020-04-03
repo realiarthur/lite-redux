@@ -1,8 +1,11 @@
 {
   "name": "wc-redux-connect",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Redux Connect HoC for Web Components",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c -o dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/realiarthur/wc-redux-connect.git"
@@ -11,21 +14,28 @@
     "redux",
     "connect",
     "web components",
-    "lit",
     "custom element",
     "store",
     "state",
-    "webcomponents",
-    "litelement",
-    "HoC"
+    "HoC",
+    "webcomponents"
   ],
-  "author": "Arthur Islamov",
+  "author": "Arthur Islamov (https://github.com/realiarthur)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/realiarthur/wc-redux-connect/issues"
   },
   "homepage": "https://github.com/realiarthur/wc-redux-connect#readme",
-  "dependencies": {
+  "peerDependencies": {
     "redux": "^4.0.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "rollup": "^1.20.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.1"
   }
 }

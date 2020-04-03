@@ -18,7 +18,7 @@ But it is more concise to make connect with store and use it everywhere in your 
 ```js
 // store.js
 import { createStore, combineReducers } from "redux";
-import makeConnect from "./connect";
+import makeConnect from "wc-redux-connect";
 
 const reducer = combineReducers({ ... });
 

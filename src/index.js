@@ -4,13 +4,16 @@ export default store => (mapStateToProps, mapDispatchToProps) => Component =>
   class Connect extends Component {
     constructor(props) {
       super(props);
+      this._getPropsFromStore=this._getPropsFromStore.bind(this)
+      this._getInheritChainProps=this._getInheritChainProps.bind(this)
+
       this._getPropsFromStore(mapStateToProps);
       this._inheritChainProps = (this._inheritChainProps || []).concat(
         mapStateToProps
       );
     }
 
-    _getPropsFromStore = mapStateToProps => {
+    _getPropsFromStore (mapStateToProps) {
       if (!mapStateToProps) return;
       const state = store.getState();
       const props = mapStateToProps(state);
@@ -20,7 +23,7 @@ export default store => (mapStateToProps, mapDispatchToProps) => Component =>
       }
     };
 
-    _getInheritChainProps = () => {
+    _getInheritChainProps () {
       this._inheritChainProps.forEach(i => this._getPropsFromStore(i));
     };
 

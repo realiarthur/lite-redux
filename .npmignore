@@ -1,10 +1,12 @@
 # dependencies
 /node_modules
 
-# build
-/dist
+# src
+/src
+rollup.config.js
 
 # misc
 .DS_Store
+.gitignore
 npm-debug.log*
 package-lock.json
