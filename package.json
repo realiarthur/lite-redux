@@ -1,6 +1,6 @@
 {
-  "name": "wc-redux-connect",
-  "version": "1.0.5",
+  "name": "lite-redux",
+  "version": "1.0.0",
   "description": "Redux Connect for Web Components",
   "main": "dist/index.js",
   "scripts": {
@@ -8,24 +8,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/realiarthur/wc-redux-connect.git"
+    "url": "git+https://github.com/realiarthur/lite-redux.git"
   },
   "keywords": [
     "redux",
     "connect",
     "web components",
     "custom element",
-    "store",
-    "state",
-    "HoC",
+    "hoc",
     "webcomponents"
   ],
   "author": "Arthur Islamov (https://github.com/realiarthur)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/realiarthur/wc-redux-connect/issues"
+    "url": "https://github.com/realiarthur/lite-redux/issues"
   },
-  "homepage": "https://github.com/realiarthur/wc-redux-connect#readme",
+  "homepage": "https://github.com/realiarthur/lite-redux#readme",
   "peerDependencies": {
     "redux": "^4.0.5"
   },
