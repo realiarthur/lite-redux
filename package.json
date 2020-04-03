@@ -1,0 +1,31 @@
+{
+  "name": "wc-redux-connect",
+  "version": "1.0.0",
+  "description": "Redux Connect HoC for Web Components",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realiarthur/wc-redux-connect.git"
+  },
+  "keywords": [
+    "redux",
+    "connect",
+    "web components",
+    "lit",
+    "custom element",
+    "store",
+    "state",
+    "webcomponents",
+    "litelement",
+    "HoC"
+  ],
+  "author": "Arthur Islamov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realiarthur/wc-redux-connect/issues"
+  },
+  "homepage": "https://github.com/realiarthur/wc-redux-connect#readme",
+  "dependencies": {
+    "redux": "^4.0.5"
+  }
+}
