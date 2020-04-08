@@ -1,6 +1,6 @@
 {
   "name": "lite-redux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Redux Connect for Web Components",
   "main": "dist/index.js",
   "scripts": {

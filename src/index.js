@@ -1,18 +1,20 @@
 import { bindActionCreators } from "redux";
 
-export default store => (mapStateToProps, mapDispatchToProps) => Component =>
+export default (store) => (mapStateToProps, mapDispatchToProps) => (
+  Component
+) =>
   class Connect extends Component {
     constructor(props) {
       super(props);
-      this._getPropsFromStore=this._getPropsFromStore.bind(this)
-      this._getInheritChainProps=this._getInheritChainProps.bind(this)
+      this._getPropsFromStore = this._getPropsFromStore.bind(this);
+      this._getInheritChainProps = this._getInheritChainProps.bind(this);
 
       this._inheritChainProps = (this._inheritChainProps || []).concat(
         mapStateToProps
       );
     }
 
-    _getPropsFromStore (mapStateToProps) {
+    _getPropsFromStore(mapStateToProps) {
       if (!mapStateToProps) return;
       const state = store.getState();
       const props = mapStateToProps(state);
@@ -20,34 +22,34 @@ export default store => (mapStateToProps, mapDispatchToProps) => Component =>
       for (const prop in props) {
         this[prop] = props[prop];
       }
-    };
+    }
 
-    _getInheritChainProps () {
-      this._inheritChainProps.forEach(i => this._getPropsFromStore(i));
-    };
+    _getInheritChainProps() {
+      this._inheritChainProps.forEach((i) => this._getPropsFromStore(i));
+    }
 
     connectedCallback() {
-      super.connectedCallback();
-
       this._getPropsFromStore(mapStateToProps);
 
       this._unsubscriber = store.subscribe(this._getInheritChainProps);
 
-      if (!mapDispatchToProps) return;
-
-      const dispatchers =
-        typeof mapDispatchToProps === "function"
-          ? mapDispatchToProps(store.dispatch)
-          : mapDispatchToProps;
-      for (const dispatcher in dispatchers) {
-        typeof mapDispatchToProps === "function"
-          ? (this[dispatcher] = dispatchers[dispatcher])
-          : (this[dispatcher] = bindActionCreators(
-              dispatchers[dispatcher],
-              store.dispatch,
-              () => store.getState()
-            ));
+      if (mapDispatchToProps) {
+        const dispatchers =
+          typeof mapDispatchToProps === "function"
+            ? mapDispatchToProps(store.dispatch)
+            : mapDispatchToProps;
+        for (const dispatcher in dispatchers) {
+          typeof mapDispatchToProps === "function"
+            ? (this[dispatcher] = dispatchers[dispatcher])
+            : (this[dispatcher] = bindActionCreators(
+                dispatchers[dispatcher],
+                store.dispatch,
+                () => store.getState()
+              ));
+        }
       }
+
+      super.connectedCallback();
     }
 
     disconnectedCallback() {
